@@ -3,6 +3,8 @@ import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsReact from 'highcharts-react-official';
 import { useState } from 'react';
 
+import Layout from '../components/Layout';
+
 if (typeof Highcharts === 'object') {
 	HighchartsExporting(Highcharts);
 }
@@ -49,7 +51,7 @@ const Chart = (props: HighchartsReact.Props) => {
 	};
 
 	return (
-		<>
+		<Layout home={false}>
 			<HighchartsReact
 				highcharts={Highcharts}
 				options={options}
@@ -59,7 +61,7 @@ const Chart = (props: HighchartsReact.Props) => {
 			<button onClick={() => generateData(options.series[0].data)}>
 				Change data
 			</button>
-		</>
+		</Layout>
 	);
 };
 
