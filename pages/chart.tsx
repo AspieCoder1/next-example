@@ -1,7 +1,8 @@
-import Highcharts from 'highcharts';
+import Highcharts, { chart } from 'highcharts';
 import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsReact from 'highcharts-react-official';
 import { useState } from 'react';
+import _ from 'lodash';
 
 import Layout from '../components/Layout';
 
@@ -10,44 +11,31 @@ if (typeof Highcharts === 'object') {
 }
 
 const Chart = (props: HighchartsReact.Props) => {
-	const [options, setOptions] = useState({
+	const chartTitle = 'Test chart';
+	const data = [1, 2, 3, 6, 8, 10, 14, 67];
+
+	const [options, setOptions] = useState<Highcharts.Options>({
 		title: {
-			text: 'My chart',
+			text: chartTitle,
 		},
 		series: [
 			{
 				type: 'line',
-				data: [1, 2, 3, 6, 8, 10, 14, 67],
+				data,
 			},
 		],
 	});
 
 	const updateSeries = array => {
-		setOptions({
-			title: {
-				text: 'My chart',
-			},
+		setOptions((prevOptions: Highcharts.Options) => ({
+			...prevOptions,
 			series: [
 				{
 					type: 'line',
 					data: array,
 				},
 			],
-		});
-	};
-
-	const generateData = array => {
-		var tmp,
-			current,
-			top = array.length;
-		if (top)
-			while (--top) {
-				current = Math.floor(Math.random() * (top + 1));
-				tmp = array[current];
-				array[current] = array[top];
-				array[top] = tmp;
-			}
-		updateSeries(array);
+		}));
 	};
 
 	return (
@@ -58,9 +46,7 @@ const Chart = (props: HighchartsReact.Props) => {
 				{...props}
 				updateArgs={[true, true, true]}
 			/>
-			<button onClick={() => generateData(options.series[0].data)}>
-				Change data
-			</button>
+			<button onClick={() => updateSeries(_.shuffle(data))}>Change data</button>
 		</Layout>
 	);
 };
