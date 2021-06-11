@@ -1,4 +1,5 @@
-import Highcharts, { chart } from 'highcharts';
+// import Highcharts, { chart } from 'highcharts';
+import Highcharts from 'highcharts/highstock';
 import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsReact from 'highcharts-react-official';
 import { useState } from 'react';
@@ -26,12 +27,28 @@ const Chart = (props: HighchartsReact.Props) => {
 		],
 	});
 
+	const stockOptions: Highcharts.Options = {
+		title: {
+			text: 'My stock chart',
+		},
+		series: [
+			{
+				type: 'line',
+				data: [1, 2, 1, 4, 3, 6, 7, 3, 8, 6, 9],
+			},
+		],
+	};
+
 	const updateSeries = array => {
 		setOptions((prevOptions: Highcharts.Options) => ({
 			...prevOptions,
 			series: [
 				{
 					type: 'line',
+					data: array,
+				},
+				{
+					type: 'bar',
 					data: array,
 				},
 			],
@@ -47,6 +64,12 @@ const Chart = (props: HighchartsReact.Props) => {
 				updateArgs={[true, true, true]}
 			/>
 			<button onClick={() => updateSeries(_.shuffle(data))}>Change data</button>
+			<h2>Stock chart</h2>
+			<HighchartsReact
+				highcharts={Highcharts}
+				constructorType={'stockChart'}
+				options={stockOptions}
+			/>
 		</Layout>
 	);
 };
