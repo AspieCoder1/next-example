@@ -2,8 +2,9 @@
 import Highcharts from 'highcharts/highstock';
 import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsReact from 'highcharts-react-official';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import _ from 'lodash';
+import Link from 'next/link';
 
 import Layout from '../components/Layout';
 
@@ -57,6 +58,7 @@ const Chart = (props: HighchartsReact.Props) => {
 
 	return (
 		<Layout home={false}>
+			<Link href='/map'>Map</Link>
 			<HighchartsReact
 				highcharts={Highcharts}
 				options={options}
