@@ -10,6 +10,7 @@ import Link from 'next/link';
 import MapChart from '../components/Map';
 import mapData from '../data/mapData';
 import Layout from '../components/Layout';
+import { Typography } from '@material-ui/core';
 
 if (typeof Highcharts === 'object') {
 	// This adds a layer of type safety ensures that the type of Highcharts is an object
@@ -75,7 +76,9 @@ const Map = (): JSX.Element => {
 	return (
 		<>
 			<Layout home={false}>
-				<h1>Map page</h1>
+				<Typography variant='h3' component='h2'>
+					Map
+				</Typography>
 				<Link href='/chart'> Chart</Link>
 				<MapChart options={mapOptions} highcharts={Highcharts} />
 			</Layout>
