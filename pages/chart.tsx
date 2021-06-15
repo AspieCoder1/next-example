@@ -4,7 +4,6 @@ import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsReact from 'highcharts-react-official';
 import React, { useState } from 'react';
 import _ from 'lodash';
-import Link from 'next/link';
 
 import Layout from '../components/Layout';
 import {
@@ -14,6 +13,7 @@ import {
 	InputLabel,
 	FormControl,
 	FormHelperText,
+	Typography,
 } from '@material-ui/core';
 import theme from '../libs/theme';
 
@@ -72,6 +72,13 @@ const Chart = (props: HighchartsReact.Props) => {
 
 	return (
 		<Layout>
+			<Typography variant='h4' component='h2'>
+				Charts
+			</Typography>
+			<Typography>
+				This page is where I ahve constructed some stuff to have a play about
+				with Highcharts to get display graphs
+			</Typography>
 			<FormControl>
 				<InputLabel id='climate-scenario'>Climate scenario</InputLabel>
 				<Select
