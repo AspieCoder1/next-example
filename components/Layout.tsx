@@ -1,15 +1,54 @@
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import {
+	AppBar,
+	Container,
+	Toolbar,
+	Typography,
+	IconButton,
+	Button,
+	MenuItem,
+} from '@material-ui/core';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import MenuIcon from '@material-ui/icons/Menu';
+import Navigation from './Navigation';
+import Drawer from '@material-ui/core/Drawer';
+import NavLink from './navigation/NavLink';
 
 const name = 'Luke Braithwaite';
 export const siteTitle = 'Next.js Sample Website';
 
-const Layout = ({ children, home }): JSX.Element => {
+const useStyles = makeStyles((theme: Theme) =>
+	createStyles({
+		toolBar: {
+			marginBottom: theme.spacing(4),
+		},
+		root: {
+			flexGrow: 1,
+		},
+		menuButton: {
+			marginRight: theme.spacing(2),
+		},
+		title: {
+			flexGrow: 1,
+		},
+		drawerContainer: {
+			padding: '20px 30px',
+		},
+	})
+);
+
+const Layout = ({ children }): JSX.Element => {
+	const classes = useStyles();
+
+	const [isOpen, setOpen] = useState<boolean>(false);
+
 	return (
-		<div className={styles.container}>
+		<>
 			<Head>
 				<link rel='icon' href='/favicon.ico' />
 				<meta
@@ -25,50 +64,26 @@ const Layout = ({ children, home }): JSX.Element => {
 				<meta name='og:title' content={siteTitle} />
 				<meta name='twitter:card' content='summary_large_image' />
 			</Head>
-			<header className={styles.header}>
-				{home ? (
-					<>
-						<Image
-							priority
-							src='/images/profile.jpg'
-							className={utilStyles.borderCircle}
-							height={144}
-							width={144}
-							alt={name}
-						/>
-						<h1 className={utilStyles.heading2Xl}>{name}</h1>
-					</>
-				) : (
-					<>
-						<Link href='/'>
-							<a>
-								<Image
-									priority
-									src='/images/profile.jpg'
-									className={utilStyles.borderCircle}
-									height={108}
-									width={108}
-									alt={name}
-								/>
-							</a>
-						</Link>
-						<h2 className={utilStyles.headingLg}>
-							<Link href='/'>
-								<a className={utilStyles.colorInherit}>{name}</a>
-							</Link>
-						</h2>
-					</>
-				)}
-			</header>
-			<main>{children}</main>
-			{!home && (
-				<div className={styles.backToHome}>
-					<Link href='/'>
-						<a>← Back to home</a>
-					</Link>
-				</div>
-			)}
-		</div>
+			<AppBar position='static' className={classes.toolBar}>
+				<Toolbar>
+					<IconButton
+						edge='start'
+						className={classes.menuButton}
+						color='inherit'
+						aria-label='menu'
+						onClick={() => setOpen(true)}
+					>
+						<MenuIcon />
+					</IconButton>
+					<Navigation isOpen={isOpen} setOpen={setOpen} />
+					<Typography className={classes.title} variant='h6'>
+						A Next.js test site
+					</Typography>
+					<Button color='inherit'>Login</Button>
+				</Toolbar>
+			</AppBar>
+			<Container>{children}</Container>
+		</>
 	);
 };
 

@@ -75,11 +75,13 @@ const Map = (): JSX.Element => {
 
 	return (
 		<>
-			<Layout home={false}>
-				<Typography variant='h3' component='h2'>
+			<Layout>
+				<Typography variant='h4' component='h2'>
 					Map
 				</Typography>
-				<Link href='/chart'> Chart</Link>
+				<Typography>
+					A map that shows the population density of different parts of Norway
+				</Typography>
 				<MapChart options={mapOptions} highcharts={Highcharts} />
 			</Layout>
 		</>

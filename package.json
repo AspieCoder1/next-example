@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "@types/lodash": "^4.14.170",
     "gray-matter": "^4.0.3",
     "highcharts": "^9.1.0",

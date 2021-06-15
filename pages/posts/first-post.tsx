@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 
 const firstPost = (): JSX.Element => {
 	return (
-		<Layout home={false}>
+		<Layout>
 			<Head>
 				<title>First Post</title>
 			</Head>

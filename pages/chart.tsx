@@ -48,17 +48,12 @@ const Chart = (props: HighchartsReact.Props) => {
 					type: 'line',
 					data: array,
 				},
-				{
-					type: 'bar',
-					data: array,
-				},
 			],
 		}));
 	};
 
 	return (
-		<Layout home={false}>
-			<Link href='/map'>Map</Link>
+		<Layout>
 			<HighchartsReact
 				highcharts={Highcharts}
 				options={options}
