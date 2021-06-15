@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
 import {
 	AppBar,
 	Container,
@@ -16,8 +12,6 @@ import {
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import Navigation from './Navigation';
-import Drawer from '@material-ui/core/Drawer';
-import NavLink from './navigation/NavLink';
 
 const name = 'Luke Braithwaite';
 export const siteTitle = 'Next.js Sample Website';

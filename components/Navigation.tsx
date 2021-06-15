@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core';
 import Drawer from '@material-ui/core/Drawer';
 import NavLink from './navigation/NavLink';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';

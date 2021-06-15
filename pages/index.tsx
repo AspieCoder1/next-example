@@ -1,7 +1,4 @@
-import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
 import { Grid, Card, Typography, Paper } from '@material-ui/core';
 import BlogItem from '../components/blog/BlogItem';
 
@@ -30,7 +27,7 @@ const Home = ({ allPostsData }) => {
 				</p>
 			</section> */}
 			<Typography variant='h4'>My Posts</Typography>
-			<Grid container spacing={1} direction='column'>
+			<Grid container spacing={2} direction='column'>
 				{allPostsData.map(({ id, date, title }) => (
 					<Grid item>
 						<BlogItem id={id} date={date} title={title} />

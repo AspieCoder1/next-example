@@ -2,7 +2,10 @@ import Layout from '../../components/Layout';
 import { getAllPostIds, getPostData } from '../../libs/posts';
 import Head from 'next/head';
 import Moment from 'react-moment';
-import utilStyles from '../../styles/utils.module.css';
+import { Typography } from '@material-ui/core';
+import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
+import Link from 'next/link';
+// import utilStyles from '../../styles/utils.module.css';
 
 export const getStaticPaths = async () => {
 	const paths = getAllPostIds();
@@ -28,11 +31,16 @@ const Post = ({ postData }) => {
 				<title>{postData.title}</title>
 			</Head>
 			<article>
-				<h1 className={utilStyles.headingXl}>{postData.title}</h1>
-				<div className={utilStyles.lightText}>
+				<Typography variant='h4' component='h1'>
+					{postData.title}
+				</Typography>
+				<Typography color='textSecondary'>
 					<Moment format={'MMMM d, YYYY'} date={postData.date} />
-				</div>
+				</Typography>
 				<div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+				<Link href='/'>
+					<KeyboardBackspaceIcon fontSize='large' />
+				</Link>
 			</article>
 		</Layout>
 	);

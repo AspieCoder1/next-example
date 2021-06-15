@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../libs/theme';
-import '../styles/globals.css';
+// import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
 	useEffect(() => {

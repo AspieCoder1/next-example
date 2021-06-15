@@ -6,10 +6,7 @@ import Moment from 'react-moment';
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		root: {
-			paddingLeft: theme.spacing(2),
-			paddingRight: theme.spacing(2),
-			paddingTop: theme.spacing(2),
-			paddingBottom: theme.spacing(2),
+			padding: theme.spacing(2),
 		},
 	})
 );
