@@ -4,8 +4,6 @@ import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsReact from 'highcharts-react-official';
 import React, { useState } from 'react';
 import _ from 'lodash';
-
-import Layout from '../components/Layout';
 import {
 	Button,
 	Select,
@@ -14,7 +12,10 @@ import {
 	FormControl,
 	FormHelperText,
 	Typography,
+	Divider,
 } from '@material-ui/core';
+
+import Layout from '../components/Layout';
 import theme from '../libs/theme';
 
 if (typeof Highcharts === 'object') {
@@ -102,10 +103,26 @@ const Chart = (props: HighchartsReact.Props) => {
 				{...props}
 				updateArgs={[true, true, true]}
 			/>
-			<Button variant='contained' onClick={() => updateSeries(_.shuffle(data))}>
+			<Button
+				variant='contained'
+				onClick={() => updateSeries(_.shuffle(data))}
+				style={{
+					marginBottom: theme.spacing(2),
+				}}
+			>
 				Change data
 			</Button>
-			<h2>Stock chart</h2>
+			<Typography
+				style={{
+					marginBottom: 0,
+					marginTop: theme.spacing(2),
+					paddingBottom: theme.spacing(0),
+				}}
+				variant='h5'
+				component='h2'
+			>
+				Stock chart
+			</Typography>
 			<HighchartsReact
 				highcharts={Highcharts}
 				constructorType={'stockChart'}
