@@ -58,7 +58,7 @@ const Layout = ({ children }): JSX.Element => {
 				<meta name='og:title' content={siteTitle} />
 				<meta name='twitter:card' content='summary_large_image' />
 			</Head>
-			<AppBar position='static' className={classes.toolBar}>
+			<AppBar position='sticky' className={classes.toolBar}>
 				<Toolbar>
 					<IconButton
 						edge='start'
