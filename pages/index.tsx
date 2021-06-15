@@ -16,22 +16,10 @@ export const getStaticProps = async () => {
 const Home = ({ allPostsData }) => {
 	return (
 		<Layout>
-			{/* <Head>
-				<title>{siteTitle}</title>
-			</Head> */}
-			{/* <section className={utilStyles.headingMd}>
-				<p>Random next sample project</p>
-				<p>
-					(This is a sample website - you’ll be building a site like this on{' '}
-					<a href='https://nextjs.org/learn'>our Next.js tutorial</a>.)
-				</p>
-			</section> */}
 			<Typography variant='h4'>My Posts</Typography>
 			<Grid container spacing={2} direction='column'>
 				{allPostsData.map(({ id, date, title }) => (
-					<Grid item>
-						<BlogItem id={id} date={date} title={title} />
-					</Grid>
+					<BlogItem id={id} date={date} title={title} />
 				))}
 			</Grid>
 		</Layout>
