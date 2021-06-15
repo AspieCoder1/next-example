@@ -52,7 +52,11 @@ const Quiz = (): JSX.Element => {
 						label='Newcastle'
 					/>
 				</RadioGroup>
-				<Button variant='contained' onClick={checkAnswer}>
+				<Button
+					variant='contained'
+					onClick={checkAnswer}
+					disabled={value === ''}
+				>
 					Check answer
 				</Button>
 				<Typography color='textSecondary'>{result}</Typography>
