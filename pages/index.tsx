@@ -30,9 +30,11 @@ const Home = ({ allPostsData }) => {
 				</p>
 			</section> */}
 			<Typography variant='h4'>My Posts</Typography>
-			<Grid>
+			<Grid container spacing={1} direction='column'>
 				{allPostsData.map(({ id, date, title }) => (
-					<BlogItem id={id} date={date} title={title} />
+					<Grid item>
+						<BlogItem id={id} date={date} title={title} />
+					</Grid>
 				))}
 			</Grid>
 		</Layout>
