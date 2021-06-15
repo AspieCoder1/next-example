@@ -1,5 +1,5 @@
 import Layout, { siteTitle } from '../components/Layout';
-import { Grid, Card, Typography, Paper } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import BlogItem from '../components/blog/BlogItem';
 
 import { getSortedPostsData } from '../libs/posts';
