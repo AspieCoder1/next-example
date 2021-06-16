@@ -18,7 +18,7 @@ const Home = ({ allPostsData }) => {
 			<Typography variant='h4'>My Posts</Typography>
 			<Grid container spacing={2} direction='column'>
 				{allPostsData.map(({ id, date, title }) => (
-					<BlogItem key={id} id={id} date={date} title={title} />
+					<BlogItem id={id} date={date} title={title} />
 				))}
 			</Grid>
 		</Layout>
