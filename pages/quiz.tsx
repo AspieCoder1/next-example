@@ -33,7 +33,6 @@ const Quiz = (): JSX.Element => {
 			</Typography>
 			<Typography>What is the capital of the United Kingdom?</Typography>
 			<FormControl component='fieldset'>
-				<FormLabel component='legend'></FormLabel>
 				<RadioGroup
 					aria-label='gender'
 					name='gender1'
@@ -59,7 +58,9 @@ const Quiz = (): JSX.Element => {
 				>
 					Check answer
 				</Button>
-				<Typography color='textSecondary'>{result}</Typography>
+				<Typography color={value === 'London' ? 'textPrimary' : 'error'}>
+					{result}
+				</Typography>
 			</FormControl>
 		</Layout>
 	);
