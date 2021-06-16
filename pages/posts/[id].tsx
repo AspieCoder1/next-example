@@ -1,13 +1,23 @@
-import Layout from '../../components/Layout';
+import React from 'react';
 import { getAllPostIds, getPostData } from '../../libs/posts';
 import Head from 'next/head';
 import Moment from 'react-moment';
 import { Typography } from '@material-ui/core';
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import Link from 'next/link';
-// import utilStyles from '../../styles/utils.module.css';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-export const getStaticPaths = async () => {
+import Layout from '../../components/Layout';
+
+type Props = {
+	postData: {
+		title: string;
+		date: string;
+		contentHtml: string;
+	};
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = getAllPostIds();
 	return {
 		paths,
@@ -15,8 +25,8 @@ export const getStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps = async ({ params }) => {
-	const postData = await getPostData(params.id);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+	const postData = await getPostData(params.id as string);
 	return {
 		props: {
 			postData,
@@ -24,7 +34,7 @@ export const getStaticProps = async ({ params }) => {
 	};
 };
 
-const Post = ({ postData }) => {
+const Post = ({ postData }: Props) => {
 	return (
 		<Layout>
 			<Head>
