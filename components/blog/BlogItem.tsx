@@ -3,6 +3,12 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Link from 'next/link';
 import Moment from 'react-moment';
 
+type Props = {
+	id: string;
+	date: string;
+	title: string;
+};
+
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		root: {
@@ -11,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-const BlogItem = ({ id, date, title }): JSX.Element => {
+const BlogItem = ({ id, date, title }: Props): JSX.Element => {
 	const styles = useStyles();
 
 	return (
