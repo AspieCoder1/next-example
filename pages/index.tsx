@@ -1,9 +1,8 @@
-import Layout, { siteTitle } from '../components/Layout';
+import Layout from '../components/Layout';
 import { Grid, Typography } from '@material-ui/core';
 import BlogItem from '../components/blog/BlogItem';
 
 import { getSortedPostsData } from '../libs/posts';
-import Moment from 'react-moment';
 
 export const getStaticProps = async () => {
 	const allPostsData = getSortedPostsData();
