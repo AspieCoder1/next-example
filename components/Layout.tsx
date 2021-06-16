@@ -7,13 +7,11 @@ import {
 	Typography,
 	IconButton,
 	Button,
-	MenuItem,
 } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import Navigation from './Navigation';
 
-const name = 'Luke Braithwaite';
 export const siteTitle = 'Next.js Sample Website';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -71,7 +69,7 @@ const Layout = ({ children }): JSX.Element => {
 					</IconButton>
 					<Navigation isOpen={isOpen} setOpen={setOpen} />
 					<Typography className={classes.title} variant='h6'>
-						A Next.js test site
+						{siteTitle}
 					</Typography>
 					<Button color='inherit'>Login</Button>
 				</Toolbar>
