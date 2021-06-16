@@ -16,6 +16,7 @@ const Quiz = (): JSX.Element => {
 	const [result, setResult] = useState<string>(null);
 	const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
 		setValue(event.target.value as string);
+		setResult(null);
 	};
 
 	const checkAnswer = () => {
