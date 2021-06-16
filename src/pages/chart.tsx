@@ -1,8 +1,7 @@
-// import Highcharts, { chart } from 'highcharts';
+import React, { useState } from 'react';
 import Highcharts from 'highcharts/highstock';
 import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsReact from 'highcharts-react-official';
-import React, { useState } from 'react';
 import _ from 'lodash';
 import {
 	Button,

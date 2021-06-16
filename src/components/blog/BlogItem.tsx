@@ -1,3 +1,4 @@
+import React from 'react';
 import { Typography, Paper, Grid } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Link from 'next/link';
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-const BlogItem = ({ id, date, title }: Props): JSX.Element => {
+const BlogItem = ({ id, date, title }): JSX.Element => {
 	const styles = useStyles();
 
 	return (
