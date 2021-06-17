@@ -23,7 +23,7 @@ const BlogItem = ({ id, date, title }): JSX.Element => {
 
 	return (
 		<Grid item>
-			<Link href={`/posts/${id}`}>
+			<Link href={`/posts/${id}`} passHref>
 				<Paper>
 					<div className={styles.root}>
 						<Typography variant='h6'>{title}</Typography>

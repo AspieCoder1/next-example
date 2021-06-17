@@ -4,7 +4,7 @@ import { MenuItem } from '@material-ui/core';
 
 const NavLink = ({ href, children }) => {
 	return (
-		<Link href={href}>
+		<Link href={href} passHref>
 			<MenuItem>{children}</MenuItem>
 		</Link>
 	);
