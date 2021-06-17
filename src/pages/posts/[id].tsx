@@ -48,7 +48,7 @@ const Post = ({ postData }: Props) => {
 					<Moment format={'MMMM d, YYYY'} date={postData.date} />
 				</Typography>
 				<div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-				<Link href='/'>
+				<Link href='/' passHref>
 					<KeyboardBackspaceIcon fontSize='large' />
 				</Link>
 			</article>
