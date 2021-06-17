@@ -1,0 +1,7 @@
+{
+    "name": "Next.js Sample Website",
+    "short_name": "Next.js Sample Website",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/"
+  }
