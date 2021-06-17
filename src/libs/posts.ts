@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import remark from 'remark';
 import html from 'remark-html';
 
-const postsDirectory = path.join(process.cwd(), '../posts');
+const postsDirectory = path.join(process.cwd(), './posts');
 
 type BlogPost = {
 	id: String;
@@ -14,6 +14,7 @@ type BlogPost = {
 };
 
 export const getSortedPostsData = () => {
+	console.log(process.cwd());
 	// Get file names under /posts
 	const fileNames = fs.readdirSync(postsDirectory);
 	const allPostsData: BlogPost[] = fileNames.map(fileName => {
