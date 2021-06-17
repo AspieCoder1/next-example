@@ -30,7 +30,6 @@ const BlogItem = ({ id, date, title }): JSX.Element => {
 						<Typography color='textSecondary'>
 							<Moment format={'MMMM d, YYYY'} date={date} />
 						</Typography>
-						<Typography></Typography>
 					</div>
 				</Paper>
 			</Link>
