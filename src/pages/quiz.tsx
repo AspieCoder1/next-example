@@ -53,6 +53,7 @@ const Quiz = (): JSX.Element => {
 				</RadioGroup>
 				<Button
 					variant='contained'
+					color='primary'
 					onClick={checkAnswer}
 					disabled={value === ''}
 				>

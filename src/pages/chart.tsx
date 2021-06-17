@@ -76,7 +76,7 @@ const Chart = (props: HighchartsReact.Props) => {
 			</Typography>
 			<Typography>
 				This page is where I have constructed some stuff to have a play about
-				with Highcharts to display graphs
+				with Highcharts to display graphs.
 			</Typography>
 			<FormControl>
 				<InputLabel id='climate-scenario'>Climate scenario</InputLabel>
