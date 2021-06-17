@@ -1,9 +1,18 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import BlogItem from '../components/blog/BlogItem';
 
 import { getSortedPostsData } from '../libs/posts';
 import Layout from '../components/Layout';
+
+const useStyles = makeStyles((theme: Theme) =>
+	createStyles({
+		heading: {
+			marginBottom: theme.spacing(2),
+		},
+	})
+);
 
 export const getStaticProps = async () => {
 	const allPostsData = getSortedPostsData();
@@ -13,10 +22,15 @@ export const getStaticProps = async () => {
 		},
 	};
 };
+
 const Home = ({ allPostsData }) => {
+	const styles = useStyles();
+
 	return (
 		<Layout>
-			<Typography variant='h4'>My Posts</Typography>
+			<Typography variant='h4' className={styles.heading}>
+				My Posts
+			</Typography>
 			<Grid container spacing={2} direction='column'>
 				{allPostsData.map(({ id, date, title }) => (
 					<BlogItem key={id} id={id} date={date} title={title} />
