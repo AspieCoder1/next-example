@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-const BlogItem = ({ id, date, title }): JSX.Element => {
+const BlogItem = ({ id, date, title }: Props): JSX.Element => {
 	const styles = useStyles();
 
 	return (

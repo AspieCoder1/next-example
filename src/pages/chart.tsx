@@ -11,7 +11,6 @@ import {
 	FormControl,
 	FormHelperText,
 	Typography,
-	Divider,
 } from '@material-ui/core';
 
 import Layout from '../components/Layout';

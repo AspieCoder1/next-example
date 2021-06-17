@@ -5,12 +5,12 @@ import HighchartIndicator from 'highcharts/indicators/indicators';
 import HighchartPivot from 'highcharts/indicators/pivot-points';
 import HighchartMacd from 'highcharts/indicators/macd';
 import HighchartsMap from 'highcharts/modules/map';
-import Link from 'next/link';
+import { Typography } from '@material-ui/core';
 
 import MapChart from '../components/Map';
 import mapData from '../data/mapData';
 import Layout from '../components/Layout';
-import { Typography } from '@material-ui/core';
+import theme from '../libs/theme';
 
 if (typeof Highcharts === 'object') {
 	// This adds a layer of type safety ensures that the type of Highcharts is an object
@@ -22,16 +22,23 @@ if (typeof Highcharts === 'object') {
 }
 
 const Map = (): JSX.Element => {
+	const { dark, light } = theme.palette.primary;
+
 	const mapOptions = {
 		title: {
 			text: '',
 		},
 		colorAxis: {
 			min: 0,
+			// stops: [
+			// 	[0, '#EFEFFF'],
+			// 	[0.67, '#4444FF'],
+			// 	[1, '#000022'],
+			// ],
 			stops: [
 				[0, '#EFEFFF'],
-				[0.67, '#4444FF'],
-				[1, '#000022'],
+				[0.67, light],
+				[1, dark],
 			],
 		},
 		tooltip: {
