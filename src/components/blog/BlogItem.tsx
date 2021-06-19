@@ -26,7 +26,9 @@ const BlogItem = ({ id, date, title }: Props): JSX.Element => {
 			<Link href={`/posts/${id}`} passHref>
 				<Paper>
 					<div className={styles.root}>
-						<Typography variant='h6'>{title}</Typography>
+						<Typography variant='h6' component='h2'>
+							{title}
+						</Typography>
 						<Typography color='textSecondary'>
 							<Moment format={'MMMM d, YYYY'} date={date} />
 						</Typography>
