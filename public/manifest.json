@@ -4,5 +4,5 @@
     "display": "standalone",
     "orientation": "portrait",
     "start_url": "/",
-    "theme-color": "#556cd6"
+    "theme_color": "#556cd6"
   }
