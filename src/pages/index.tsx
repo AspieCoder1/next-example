@@ -1,8 +1,9 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import BlogItem from '../components/blog/BlogItem';
+import Head from 'next/head';
 
+import BlogItem from '../components/blog/BlogItem';
 import { getSortedPostsData } from '../libs/posts';
 import Layout from '../components/Layout';
 
@@ -28,6 +29,9 @@ const Home = ({ allPostsData }) => {
 
 	return (
 		<Layout>
+			<Head>
+				<title>Home page</title>
+			</Head>
 			<Typography variant='h4' className={styles.heading}>
 				My Posts
 			</Typography>
