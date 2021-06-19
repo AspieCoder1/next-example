@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const Chart = (props: HighchartsReact.Props) => {
+	console.log(theme.palette.primary.main);
 	const styles = useStyles();
 	const chartTitle = 'Test chart';
 	const data = [1, 2, 3, 6, 8, 10, 14, 67];
