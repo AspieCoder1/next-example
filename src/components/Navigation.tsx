@@ -20,6 +20,7 @@ const Navigation = ({ isOpen, setOpen }): JSX.Element => {
 				<NavLink href='/map'>Map</NavLink>
 				<NavLink href='/chart'>Chart</NavLink>
 				<NavLink href='/quiz'>Quiz</NavLink>
+				<NavLink href='/chart_grid'>Charts (Grid)</NavLink>
 			</div>
 		</Drawer>
 	);
