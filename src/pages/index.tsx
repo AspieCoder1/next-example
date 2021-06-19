@@ -32,7 +32,7 @@ const Home = ({ allPostsData }) => {
 			<Head>
 				<title>Home page</title>
 			</Head>
-			<Typography variant='h4' className={styles.heading}>
+			<Typography variant='h4' className={styles.heading} component='h1'>
 				My Posts
 			</Typography>
 			<Grid container spacing={2} direction='column'>
