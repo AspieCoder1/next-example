@@ -54,7 +54,6 @@ const AppBar = ({ siteTitle }) => {
 				<Typography className={classes.title} variant='h6'>
 					{siteTitle}
 				</Typography>
-
 				<Button
 					color='inherit'
 					href={!!user ? '/api/auth/logout' : '/api/auth/login'}
