@@ -1,44 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import {
-	AppBar,
-	Container,
-	Toolbar,
-	Typography,
-	IconButton,
-	Button,
-} from '@material-ui/core';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import Navigation from './Navigation';
+import { Container } from '@material-ui/core';
+import AppBar from './AppBar';
 
 export const siteTitle = 'Next.js Sample Website';
 
-const useStyles = makeStyles((theme: Theme) =>
-	createStyles({
-		toolBar: {
-			marginBottom: theme.spacing(4),
-		},
-		root: {
-			flexGrow: 1,
-		},
-		menuButton: {
-			marginRight: theme.spacing(2),
-		},
-		title: {
-			flexGrow: 1,
-		},
-		drawerContainer: {
-			padding: '20px 30px',
-		},
-	})
-);
-
 const Layout = ({ children }): JSX.Element => {
-	const classes = useStyles();
-
-	const [isOpen, setOpen] = useState<boolean>(false);
-
 	return (
 		<>
 			<Head>
@@ -56,24 +23,7 @@ const Layout = ({ children }): JSX.Element => {
 				<meta name='og:title' content={siteTitle} />
 				<meta name='twitter:card' content='summary_large_image' />
 			</Head>
-			<AppBar position='sticky' className={classes.toolBar}>
-				<Toolbar>
-					<IconButton
-						edge='start'
-						className={classes.menuButton}
-						color='inherit'
-						aria-label='menu'
-						onClick={() => setOpen(true)}
-					>
-						<MenuIcon />
-					</IconButton>
-					<Navigation isOpen={isOpen} setOpen={setOpen} />
-					<Typography className={classes.title} variant='h6'>
-						{siteTitle}
-					</Typography>
-					<Button color='inherit'>Login</Button>
-				</Toolbar>
-			</AppBar>
+			<AppBar siteTitle={siteTitle} />
 			<Container>{children}</Container>
 		</>
 	);
