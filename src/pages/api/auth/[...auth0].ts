@@ -1,9 +1,11 @@
 // import { handleAuth } from '@auth0/nextjs-auth0';
 
-import { handleAuth, handleCallback } from '@auth0/nextjs-auth0';
+import { handleAuth, handleCallback, Session, GetLoginState } from '@auth0/nextjs-auth0';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-const afterCallback = async (req, res, session, state) => {
-	console.log(session);
+const afterCallback = async (req: NextApiRequest, res: NextApiResponse, session: Session, state: GetLoginState) => {
+	session.user = { ...session.user, user_data: session.user['http://next-example-eta.vercel.app/user_data'] };
+	delete session.user['http://next-example-eta.vercel.app/user_data'];
 	return session;
 };
 
