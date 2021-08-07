@@ -3,15 +3,7 @@ import Highcharts from 'highcharts/highstock';
 import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsReact from 'highcharts-react-official';
 import _ from 'lodash';
-import {
-	Button,
-	Select,
-	MenuItem,
-	InputLabel,
-	FormControl,
-	FormHelperText,
-	Typography,
-} from '@material-ui/core';
+import { Button, Select, MenuItem, InputLabel, FormControl, FormHelperText, Typography } from '@material-ui/core';
 
 import Layout from '../components/Layout';
 import theme from '../libs/theme';
@@ -75,32 +67,20 @@ const Chart = (props: HighchartsReact.Props) => {
 				Charts
 			</Typography>
 			<Typography>
-				This page is where I have constructed some stuff to have a play about
-				with Highcharts to display graphs.
+				This page is where I have constructed some stuff to have a play about with Highcharts to display graphs.
 			</Typography>
 			<FormControl>
 				<InputLabel id='climate-scenario'>Climate scenario</InputLabel>
-				<Select
-					value={option}
-					onChange={handleChange}
-					labelId='climate-scenario'
-				>
+				<Select value={option} onChange={handleChange} labelId='climate-scenario'>
 					<MenuItem value='+0.5℃'>+0.5℃</MenuItem>
 					<MenuItem value='+1.0℃'>+1.0℃</MenuItem>
 					<MenuItem value='+1.5℃'>+1.5℃</MenuItem>
 					<MenuItem value='+2.0℃'>+2.0℃</MenuItem>
 				</Select>
-				<FormHelperText>
-					Select the scenario you want to visualise
-				</FormHelperText>
+				<FormHelperText>Select the scenario you want to visualise</FormHelperText>
 			</FormControl>
 
-			<HighchartsReact
-				highcharts={Highcharts}
-				options={options}
-				{...props}
-				updateArgs={[true, true, true]}
-			/>
+			<HighchartsReact highcharts={Highcharts} options={options} {...props} updateArgs={[true, true, true]} />
 			<Button
 				variant='contained'
 				onClick={() => updateSeries(_.shuffle(data))}
@@ -121,11 +101,7 @@ const Chart = (props: HighchartsReact.Props) => {
 			>
 				Stock chart
 			</Typography>
-			<HighchartsReact
-				highcharts={Highcharts}
-				constructorType={'stockChart'}
-				options={stockOptions}
-			/>
+			<HighchartsReact highcharts={Highcharts} constructorType={'stockChart'} options={stockOptions} />
 		</Layout>
 	);
 };
