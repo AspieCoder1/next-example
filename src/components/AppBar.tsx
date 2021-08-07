@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-	AppBar as MaterialAppBar,
-	Toolbar,
-	Typography,
-	IconButton,
-	Button,
-} from '@material-ui/core';
+import { AppBar as MaterialAppBar, Toolbar, Typography, IconButton, Button } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useUser } from '@auth0/nextjs-auth0';
@@ -54,10 +48,7 @@ const AppBar = ({ siteTitle }) => {
 				<Typography className={classes.title} variant='h6'>
 					{siteTitle}
 				</Typography>
-				<Button
-					color='inherit'
-					href={!!user ? '/api/auth/logout' : '/api/auth/login'}
-				>
+				<Button color='inherit' href={!!user ? '/api/auth/logout' : '/api/auth/login'}>
 					{!!user ? 'Logout' : 'Login'}
 				</Button>
 			</Toolbar>
