@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 
 const Me = (): JSX.Element => {
 	const { user, error, isLoading } = useUser();
+	console.log(user);
 
 	if (isLoading) {
 		return (
