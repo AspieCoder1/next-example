@@ -4,8 +4,9 @@ import { handleAuth, handleCallback, Session, GetLoginState } from '@auth0/nextj
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const afterCallback = async (req: NextApiRequest, res: NextApiResponse, session: Session, state: GetLoginState) => {
-	session.user = { ...session.user, user_data: session.user['http://next-example-eta.vercel.app/user_data'] };
-	delete session.user['http://next-example-eta.vercel.app/user_data'];
+	session = { ...session, user_data: session['http://next-example-eta.vercel.app/user_data'] };
+	delete session['http://next-example-eta.vercel.app/user_data'];
+	console.log(session);
 	return session;
 };
 
